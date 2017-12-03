@@ -1,0 +1,40 @@
+/*
+ * This file contains repositories,plugins,dependancies required for application smooth build.
+ *
+ */
+ 
+buildscript {
+  ext {
+    springBootVersion = '1.5.4.RELEASE'
+  }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+  
+ 
+}
+// Apply the plugins required for application 
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+version='0.0.1'
+sourceCompatibility = 1.8
+
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+   compile("org.springframework.boot:spring-boot-starter-web")
+  compileOnly("org.projectlombok:lombok")
+  testCompile("org.springframework.boot:spring-boot-starter-test")
+  testCompile("org.mockito:mockito-core")
+}
+
